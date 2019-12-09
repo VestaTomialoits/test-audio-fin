@@ -45,17 +45,15 @@ window.onload = function () {
 
             let cells = document.getElementsByTagName('td');
 
-            for (let i = 0; i < bufferLength; i++) {
+             for (let i = 0; i < bufferLength; i++) {
                 let color = dataArray[i],
                     r = color,
                     g = 120 * (i / bufferLength),
                     b = 50;
 
-                setInterval(() => {
-                    for (let i of cells) {
-                        i.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-                    }
-                }, 50);
+                for (let j=0; i < cells.length; j++) {
+                    cells[j].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                }
             }
         }
         audio.play();
